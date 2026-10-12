@@ -1,0 +1,1 @@
+{"name":"vanta-hypercars","version":"1.0.0","private":true,"description":"Учебный сайт VANTA по заданию 2: Node.js, SQLite, регистрация и заявки","scripts":{"start":"node server.mjs","test":"node --test test/server.test.mjs"},"engines":{"node":">=24"}}
