@@ -24,3 +24,5 @@ function authDialog(mode){const register=mode==='register';document.querySelecto
 document.querySelector('#request-form').onsubmit=async e=>{e.preventDefault();const message=document.querySelector('#form-message');if(!currentUser){message.textContent='Войдите или зарегистрируйтесь, чтобы сохранить заявку в личном кабинете.';authDialog('register');return}const button=e.target.querySelector('[type="submit"]');button.disabled=true;try{const result=await api('requests',Object.fromEntries(new FormData(e.target)));message.textContent=`Заявка №${result.id} сохранена. Посмотреть её можно в личном кабинете.`;e.target.reset()}catch(error){message.textContent=error.message}finally{button.disabled=false}};
 
 
+
+document.querySelectorAll('.logo').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();history.replaceState(null,'',location.pathname+location.search);window.scrollTo({top:0,left:0,behavior:'instant'})}));
