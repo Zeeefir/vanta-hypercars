@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": "dist",
+  "rewrites": [{ "source": "/api/:route", "destination": "/api/proxy?route=:route" }],
+  "functions": { "api/proxy.js": { "maxDuration": 15 } }
+}
+
